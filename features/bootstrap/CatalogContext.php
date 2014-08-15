@@ -1,9 +1,6 @@
 <?php
 
-use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
 
 /**
  * Behat context class.
@@ -12,6 +9,7 @@ class CatalogContext implements SnippetAcceptingContext
 {
     private $catalog;
     private $browsingResult;
+    private $expectedProducts = [];
 
     /**
      * Initializes context.
@@ -45,5 +43,25 @@ class CatalogContext implements SnippetAcceptingContext
     public function iShouldBeToldThatThereAreNoProducts()
     {
         PHPUnit_Framework_Assert::assertEquals('There are no products', $this->browsingResult);
+    }
+
+    /**
+     * @Given there is a product :sku in the catalogue
+     */
+    public function thereIsAProductInTheCatalogue($sku)
+    {
+        $product = new Product($sku);
+        $this->expectedProducts[] = $product;
+        $this->catalog->addProduct($product);
+    }
+
+    /**
+     * @Then I should see these exact products in the catalogue
+     */
+    public function iShouldSeeTheseExactProductsInTheCatalogue()
+    {
+        foreach ($this->expectedProducts as $expectedProduct) {
+            PHPUnit_Framework_Assert::assertContains($expectedProduct, $this->browsingResult);
+        }
     }
 }
