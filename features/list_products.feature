@@ -1,2 +1,3 @@
-So that I can select the products I wish to purchase
-As a User I want to be able to view a collection of products
+In order to buy products I want
+As a customer
+I need to be able to view all available products
