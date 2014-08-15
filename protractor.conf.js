@@ -1,6 +1,5 @@
-var debug = require('debuglog')('protractor')
-  , app = require('express')();
-  
+var debug = require('debuglog')('protractor');
+
 exports.config = {
   // The timeout for each script run on the browser. This should be longer
   // than the maximum time your application needs to stabilize between tasks.
@@ -25,9 +24,6 @@ exports.config = {
   // You can specify a file containing code to run by setting onPrepare to
   // the filename string.
   onPrepare: function() {
-    app.listen(8000, function() {
-      debug('Protractor mock server listening on http://localhost:%d', 8000);
-    });
   },
 
   // The params object will be passed directly to the protractor instance,
@@ -48,7 +44,7 @@ exports.config = {
   cucumberOpts: {
     // Only execute the features or scenarios with tags matching @dev.
     // This may be an array of strings to specify multiple tags to include.
-    tags: '@server',
+    // tags: '@server',
 
     // How to format features (default: progress)
     format: 'pretty'
