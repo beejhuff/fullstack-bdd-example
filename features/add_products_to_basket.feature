@@ -1,2 +1,3 @@
-So that I can purchase a set of selected products
-As a user I want to be able to add selected products to a shopping cart
+In order to buy products I want
+As a customer
+I need to be able to select them from the list
