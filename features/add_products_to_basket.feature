@@ -1,3 +1,3 @@
-In order to buy products I want
-As a customer
-I need to be able to select them from the list
+Feature: In order to buy products I want
+  As a customer
+  I need to be able to select them from the list
