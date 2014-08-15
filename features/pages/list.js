@@ -1,9 +1,10 @@
 /* global element, by, browser */
 
-var ListPage = function () {
+var ListPage = (function () {
   'use strict';
 
   function ListPage() {
+      //this.var etc
   }
 
   ListPage.prototype.visitPage = function () {
@@ -12,6 +13,6 @@ var ListPage = function () {
 
   return ListPage;
 
-};
+})();
 
 module.exports = ListPage;
