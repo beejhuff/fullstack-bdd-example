@@ -1,5 +1,10 @@
 var debug = require('debuglog')('protractor');
 
+
+var sys = require('sys');
+var exec = require('child_process').exec;
+function puts(error, stdout, stderr) { sys.puts(stdout) }
+
 exports.config = {
   // The timeout for each script run on the browser. This should be longer
   // than the maximum time your application needs to stabilize between tasks.
@@ -24,6 +29,11 @@ exports.config = {
   // You can specify a file containing code to run by setting onPrepare to
   // the filename string.
   onPrepare: function() {
+    exec('cd ./public && php -S localhost:8000', puts);
+  },
+
+  onComplete: function() {
+    exec('killall php', puts);
   },
 
   // The params object will be passed directly to the protractor instance,

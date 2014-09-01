@@ -2,8 +2,7 @@ var pages = require('../pages/index');
 
 module.exports = function () {
     this.Given(/^there are no products in the catalogue$/, function (callback) {
-        var listPage = new pages.list();
-        listPage.visitPage().then(callback);
+      this.there_are_no_product_in_the_catalogue(callback);
     });
 
     this.When(/^I browse the catalogue$/, function (callback) {
