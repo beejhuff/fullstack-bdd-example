@@ -4,7 +4,7 @@
   "description": "fullstack-bdd-example =====================",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/protractor/bin/protractor && set WORLD=domain&& node node_modules/cucumber/bin/cucumber.js -f pretty"
   },
   "repository": {
     "type": "git",
