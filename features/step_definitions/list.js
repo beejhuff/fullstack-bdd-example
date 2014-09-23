@@ -6,13 +6,11 @@ module.exports = function () {
     });
 
     this.When(/^I browse the catalogue$/, function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback.pending();
+      this.visit_catalogue_page(callback);
     });
 
     this.Then(/^I should be told that there are no products$/, function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback.pending();
+      this.notified_of_empty_catalogue(callback);
     });
 
     this.Given(/^there is a product "([^"]*)" in the catalogue$/, function (arg1, callback) {
