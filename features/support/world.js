@@ -1,7 +1,7 @@
 var world = process.env.WORLD;
 if (!world) {
 //  console.warn("Please set $WORLD before running. Defaulting to 'domain'...");
-  world = 'domain';
+  world = 'ui';
 }
 
 module.exports = function () {

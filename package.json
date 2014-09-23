@@ -33,7 +33,11 @@
     "karma-chrome-launcher": "~0.1.4",
     "karma-sinon": "~1.0.3",
     "karma-chai": "~0.1.0",
-    "karma-ng-html2js-preprocessor": "~0.1.0"
+    "karma-ng-html2js-preprocessor": "~0.1.0",
+    "testem": "~0.6.19",
+    "grunt-contrib-testem": "~0.5.16",
+    "grunt-newer": "~0.7.0",
+    "load-grunt-config": "~0.13.1"
   },
   "dependencies": {
     "debuglog": "~1.0.1"
