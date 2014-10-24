@@ -17,25 +17,25 @@ exports.config = {
   ],
 
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'firefox'
   },
 
   // ----- More information for your tests ----
   //
   // A base URL for your application under test. Calls to protractor.get()
   // with relative paths will be prepended with this.
-  baseUrl: 'http://localhost:8000',
+  baseUrl: 'http://localhost:8000/',
 
   // A callback function called once protractor is ready and available, and
   // before the specs are executed
   // You can specify a file containing code to run by setting onPrepare to
   // the filename string.
   onPrepare: function() {
-    exec('cd ./public && php -S localhost:8000', puts);
+    // exec('cd ./public && php -S localhost:8000', puts);
   },
 
   onComplete: function() {
-    exec('killall php', puts);
+    // exec('killall php', puts);
   },
 
   // The params object will be passed directly to the protractor instance,

@@ -21,12 +21,10 @@ function UiWorld(ready) {
       callback();
     },
     visit_catalogue_page: function (callback) {
-      listPage.visit();
-      callback();
+      listPage.visit(callback);
     },
     notified_of_empty_catalogue: function (callback) {
-      listPage.displaysEmptyCatalogueMessage();
-      callback();
+      listPage.displaysEmptyCatalogueMessage(callback);
     }
   };
 
